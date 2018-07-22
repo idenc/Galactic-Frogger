@@ -16,19 +16,19 @@ import java.util.ArrayList;
  * Implements the ActionListener interface.
  * Handles user input and acts as an in-between for Model and View.
  */
-public abstract class Controller implements ActionListener {
+abstract class Controller implements ActionListener {
 
-    protected boolean running;
-    protected boolean won = false;
-    protected int score;
-    protected int highScore;
+    boolean running;
+    boolean won = false;
+    int score;
+    int highScore;
 
-    protected Frog frog;
-    public KeyManager keyManager;
+    Frog frog;
+    KeyManager keyManager;
     private Model model;
-    protected CountdownTimer countdownTimer;
+    CountdownTimer countdownTimer;
 
-    protected ArrayList<GameObstacle> obstacles = new ArrayList<>();
+    ArrayList<GameObstacle> obstacles = new ArrayList<>();
 
     /**
      * Constructor for Controller.
@@ -37,7 +37,7 @@ public abstract class Controller implements ActionListener {
      * @param frogYStart The Frog object's x co-ordinate.
      * @param delay      Delay for the game timer.
      */
-    public Controller(int frogXStart, int frogYStart, int delay) {
+    Controller(int frogXStart, int frogYStart, int delay) {
         frog = new Frog(frogXStart, frogYStart);
         initBoard(delay);
     }
@@ -61,9 +61,9 @@ public abstract class Controller implements ActionListener {
      * Creates world file object and calls writeDefaultWorld if the file doesn't already exist.
      *
      * @param path Path to the world file.
-     * @throws IOException
+     * @throws IOException io
      */
-    protected void initWorld(String path) throws IOException {
+    void initWorld(String path) throws IOException {
         File worldFile = new File(path);
         if (!worldFile.exists()) {
             writeDefaultWorld(worldFile);
@@ -101,7 +101,7 @@ public abstract class Controller implements ActionListener {
     /**
      * Compares the current score and high score, if the current score is higher than the high score it becomes the new high score.
      */
-    protected void compareScore() {
+    void compareScore() {
         if (score > highScore) {
             highScore = score;
         }
@@ -124,7 +124,7 @@ public abstract class Controller implements ActionListener {
         }
     }
 
-    protected void reset() {
+    void reset() {
         model.setRunning(true);
         model.setWon(false);
         won = false;
@@ -143,7 +143,7 @@ public abstract class Controller implements ActionListener {
     /**
      * Handles updating the game.
      */
-    public void tick() {
+    void tick() {
         model.updateObstacles();
         keyManager.tick();
         getInput();

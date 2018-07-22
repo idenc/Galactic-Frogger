@@ -10,10 +10,10 @@ import java.util.ArrayList;
  */
 public class Model {
     private int score;
-    protected Frog frog;
+    Frog frog;
     private boolean running;
     private boolean won = false;
-    protected ArrayList<GameObstacle> obstacles;
+    ArrayList<GameObstacle> obstacles;
     private CountdownTimer countdownTimer;
 
     /**

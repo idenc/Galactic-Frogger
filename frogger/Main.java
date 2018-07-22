@@ -13,7 +13,7 @@ import java.io.IOException;
  * Main handles launching the game through a GUI interface.
  * Inherits JFrame and implements ActionListener for button presses.
  */
-public class Main extends JFrame implements ActionListener {
+class Main extends JFrame implements ActionListener {
     private JFrame controlFrame;
 
     /**
@@ -48,12 +48,9 @@ public class Main extends JFrame implements ActionListener {
 
     public static void main(String[] args) {
 
-        EventQueue.invokeLater(new Runnable() {
-            @Override
-            public void run() {
+        EventQueue.invokeLater(() -> {
 
-                Main game = new Main();
-            }
+            Main game = new Main();
         });
     }
 

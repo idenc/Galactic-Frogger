@@ -11,8 +11,9 @@ import java.awt.*;
 
 public class GameObject {
     //Instance variables.
-    protected int x, y;
-    protected int width;
+    int x;
+    int y;
+    int width;
     private int height;
     private char symbol;
     private Image image;

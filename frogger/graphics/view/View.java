@@ -13,12 +13,12 @@ import java.util.ArrayList;
  * Inherits from JPanel.
  */
 public class View extends JPanel {
-    protected int score;
-    protected int highScore;
-    protected Frog frog;
-    protected final int screenSize;
-    protected ArrayList<GameObstacle> obstacles;
-    protected CountdownTimer countdownTimer;
+    int score;
+    int highScore;
+    Frog frog;
+    final int screenSize;
+    ArrayList<GameObstacle> obstacles;
+    CountdownTimer countdownTimer;
 
     /**
      * Constructor for View
@@ -31,7 +31,7 @@ public class View extends JPanel {
      * @param screenSize The Display's screen size.
      * @param obstacles  An ArrayList containing the Game Obstacles.
      */
-    public View(Frog frog, int screenSize, ArrayList<GameObstacle> obstacles, CountdownTimer countdownTimer) {
+    View(Frog frog, int screenSize, ArrayList<GameObstacle> obstacles, CountdownTimer countdownTimer) {
         this.frog = frog;
         this.screenSize = screenSize;
         this.obstacles = obstacles;

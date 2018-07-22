@@ -5,7 +5,6 @@ package frogger.model;
  * Inherits from GameObject.
  */
 public class GameObstacle extends GameObject {
-    private final int DEFAULT_SPEED = 1;
     private final int boardWidth;
     private final int offScreenBuffer;
     private boolean dangerous;
@@ -46,6 +45,7 @@ public class GameObstacle extends GameObject {
      * Handles movement of Game Obstacles.
      */
     public void move() {
+        int DEFAULT_SPEED = 1;
         if (direction == 'L') {
             x -= DEFAULT_SPEED;
 
