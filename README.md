@@ -5,6 +5,8 @@ javac -cp . frogger/Main.java
 To run:
 java frogger/Main
 
+![alt text](https://i.imgur.com/YVhav8r.png)
+
 Game instructions:
 WASD for moving.
 X to restart.
